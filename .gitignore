@@ -1,5 +1,8 @@
 .vscode/
+__pycache__/
+logs/
 temp_eval/
 results_ner/
 best_ner_model/
 onnx_ner_model/
+*.egg-info/
