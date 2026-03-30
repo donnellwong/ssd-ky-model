@@ -1,128 +1,72 @@
-from transformers import AutoTokenizer, AutoModelForTokenClassification, TrainingArguments, Trainer, DataCollatorForTokenClassification
 import numpy as np
-from datasets import load_dataset
-from seqeval.metrics import precision_score, recall_score, f1_score, accuracy_score
-from pprint import pprint
-
-# ====================== 配置 ======================
-model_checkpoint = "distilbert/distilbert-base-multilingual-cased"   # 或 "cycloneboy/chinese_mobilebert_base_f2"
-model_checkpoint = "./best_ner_model"
-label_list = ["O", "B-NUM", "I-NUM", "B-TYP", "I-TYP", "B-AMT", "I-AMT"]
-label2id = {label: i for i, label in enumerate(label_list)}
-id2label = {i: label for label, i in label2id.items()}
-
-num_labels = len(label_list)
-
-# ====================== 查看模型下载地址 ======================
-# from huggingface_hub import list_repo_files, hf_hub_url
-# files = list_repo_files(model_checkpoint)
-# pprint(files)
-# print(hf_hub_url(model_checkpoint, 'pytorch_model.bin'))
-# exit(0)
-
-# ====================== 数据加载 ======================
-dataset = load_dataset("json", data_files={"train": "train.jsonl", "validation": "valid.jsonl"})
-
-tokenizer = AutoTokenizer.from_pretrained(model_checkpoint, use_fast=True)
-
-def tokenize_and_align_labels(examples):
-    tokenized_inputs = tokenizer(examples["text"], truncation=True, max_length=64, is_split_into_words=False)
-    
-    labels = []
-    for i, label in enumerate(examples["labels"]):
-        word_ids = tokenized_inputs.word_ids(batch_index=i)
-        previous_word_idx = None
-        label_ids = []
-        for word_idx in word_ids:
-            if word_idx is None:
-                label_ids.append(-100)          # special token忽略
-            elif word_idx != previous_word_idx:
-                label_ids.append(label2id[label[word_idx]])
-            else:
-                label_ids.append(label2id[label[word_idx]] if label[word_idx].startswith("B-") else -100)  # I标签只第一个
-            previous_word_idx = word_idx
-        labels.append(label_ids)
-    
-    tokenized_inputs["labels"] = labels
-    return tokenized_inputs
-
-tokenized_datasets = dataset.map(tokenize_and_align_labels, batched=True)
-
-# ====================== 模型 ======================
-model = AutoModelForTokenClassification.from_pretrained(
-    model_checkpoint,
-    num_labels=num_labels,
-    id2label=id2label,
-    label2id=label2id,
-    ignore_mismatched_sizes=True
-)
+import conf
+conf.model_checkpoint = "./best_ner_model"
+import train_ner
 
 # ====================== 快速評估 ======================
 
+# eval_results = train_ner.trainer.evaluate()
+# from pprint import pprint
+# print("\n未 fine-tune 的驗證集效果：")
+# pprint(eval_results)
 
+# ====================== 验证集预测结果调试 ======================
 
+sample_texts = train_ner.dataset["validation"]["text"][:5]
+# 把验证集转成 tensor 格式进行预测
+eval_dataset = train_ner.tokenized_datasets["validation"]
+predictions = train_ner.trainer.predict(eval_dataset)   # 使用 trainer.predict 最方便
+raw_output = predictions.predictions   # Trainer 返回的原始预测结果
 
-# 定義評估指標（用 seqeval）
-def compute_metrics(p):
-    predictions, labels = p
-    predictions = np.argmax(predictions, axis=2)
-
-    # 移除 ignored_index (-100)
-    true_labels = [[label_list[l] for l in label if l != -100] for label in labels]
-    true_predictions = [
-        [label_list[p] for (p, l) in zip(prediction, label) if l != -100]
-        for prediction, label in zip(predictions, labels)
-    ]
-
-    return {
-        "precision": precision_score(true_labels, true_predictions),
-        "recall": recall_score(true_labels, true_predictions),
-        "f1": f1_score(true_labels, true_predictions),
-        "accuracy": accuracy_score(true_labels, true_predictions),
-    }
-
-data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer)
-
-trainer = Trainer(
-    model=model,
-    args=TrainingArguments(
-        output_dir="./temp_eval",
-        per_device_eval_batch_size=16,  # 依記憶體調整
-        report_to="none",
-    ),
-    train_dataset=tokenized_datasets["train"],
-    eval_dataset=tokenized_datasets["validation"],
-    processing_class=tokenizer,
-    data_collator=data_collator,
-    compute_metrics=compute_metrics,
-)
-# 直接評估驗證集（不進行訓練）
-eval_results = trainer.evaluate()
-
-print("\n未 fine-tune 的驗證集效果：")
-pprint(eval_results)
-
-
-# 随便取验证集前几条作为示例
-sample_texts = dataset["validation"]["text"][:5]
-sample_labels = dataset["validation"]["labels"][:5]
-
-# 预测
-predictions = trainer.predict(tokenized_datasets["validation"])
+# 1. 兼容多种返回格式（tuple / JointNEROutput / dict）
+if isinstance(raw_output, tuple):
+    # 最常见的情况：Trainer 把 JointNEROutput 转成了 tuple
+    entity_logits = raw_output[0]      # 第1个永远是 entity_logits
+    bet_logits    = raw_output[1]      # 第2个是 bet_logits
+elif hasattr(raw_output, "entity_logits") and hasattr(raw_output, "bet_logits"):
+    # 如果 Trainer 保留了 ModelOutput 对象
+    entity_logits = raw_output.entity_logits
+    bet_logits    = raw_output.bet_logits
+elif isinstance(raw_output, dict):
+    # 某些版本会转成 dict
+    entity_logits = raw_output.get("entity_logits")
+    bet_logits    = raw_output.get("bet_logits")
+else:
+    # 兜底（基本不会走到这里）
+    entity_logits = raw_output
+    bet_logits    = None
 
 # 取出预测结果（argmax）
-pred_ids = np.argmax(predictions.predictions, axis=2)
+entity_pred_ids = np.argmax(entity_logits, axis=-1)   # (batch_size, seq_len)
+bet_pred_ids = np.argmax(bet_logits, axis=-1)
 
-# 对齐标签，去掉 -100
+print("=== 验证集预测结果调试 ===")
+
 for i in range(len(sample_texts)):
-    tokens = tokenizer.tokenize(sample_texts[i])
-    true_label_ids = tokenized_datasets["validation"][i]["labels"]
-    pred_label_ids = pred_ids[i]
+    tokens = train_ner.tokenizer.tokenize(sample_texts[i])
+    
+    # entity 部分
+    true_entity_label_ids = train_ner.tokenized_datasets["validation"][i]["entity_labels"]
+    pred_entity_label_ids = entity_pred_ids[i]
+    
+    true_entity_labels = [conf.id2entity[l] for l in true_entity_label_ids if l != -100]
+    pred_entity_labels = [conf.id2entity[p] for p, l in zip(pred_entity_label_ids, true_entity_label_ids) if l != -100]
 
-    true_labels = [label_list[l] for l in true_label_ids if l != -100]
-    pred_labels = [label_list[p] for (p, l) in zip(pred_label_ids, true_label_ids) if l != -100]
+    # bet 部分
+    true_bet_label_ids = train_ner.tokenized_datasets["validation"][i]["bet_labels"]
+    pred_bet_label_ids = bet_pred_ids[i]                    # 注意：这里应该用 bet 的预测！（当前代码有bug）
+    
+    true_bet_labels = [conf.id2bet[l] for l in true_bet_label_ids if l != -100]
+    pred_bet_labels = [conf.id2bet[p] for p, l in zip(pred_bet_label_ids, true_bet_label_ids) if l != -100]
 
-    print(f"\n樣本 {i+1}:")
-    print("輸入文本:", sample_texts[i])
-    print("真實標籤:", true_labels)
-    print("模型輸出:", pred_labels)
+    print(f"\n样本 {i+1}:")
+    print("輸入文本 :", sample_texts[i])
+    print("分词结果 :", tokens)
+    print("真實 Entity :", true_entity_labels)
+    print("預測 Entity :", pred_entity_labels)
+    print("真實 BET    :", true_bet_labels)
+    print("預測 BET    :", pred_bet_labels)
+    
+    # 额外显示非 O 的数量，帮助判断模型是否在学习
+    non_o_count = sum(1 for label in pred_entity_labels if label != "O")
+    print(f"預測非 O 實體數量: {non_o_count}")

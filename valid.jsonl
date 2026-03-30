@@ -1,5 +1,4 @@
 [
-    {"text": "123 456 组选10元", "labels": ["O", "B-NUM", "I-NUM", "B-TYP", "I-TYP", "B-AMT", "O"]},
-    {"text": "123 123 组选10元", "labels": ["O", "B-NUM", "I-NUM", "B-TYP", "I-TYP", "B-AMT", "O"]},
-    {"text": "456 123 组选10元", "labels": ["O", "B-NUM", "I-NUM", "B-TYP", "I-TYP", "B-AMT", "O"]}
+    {"text": "123 456 组 选 10 元", "entity_labels": ["B-NUM", "I-NUM", "B-TYPE", "I-TYPE", "B-AMOUNT", "I-AMOUNT"], "bet_labels": ["B-BET", "I-BET", "I-BET", "I-BET", "I-BET", "I-BET"]},
+    {"text": "456 123 组 选 10 元", "entity_labels": ["B-NUM", "I-NUM", "B-TYPE", "I-TYPE", "B-AMOUNT", "I-AMOUNT"], "bet_labels": ["B-BET", "I-BET", "I-BET", "I-BET", "I-BET", "I-BET"]}
 ]

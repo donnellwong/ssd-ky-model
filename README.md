@@ -1,8 +1,9 @@
 ### 模型选择
 ```
 方案: 小型双向Transformer，做token classification任务
-首选: distilbert-base-multilingual-cased (支持中文，6层，较轻)
-备选: cycloneboy/chinese_mobilebert_base_f2
+模型: hfl/chinese-bert-wwm-ext
+备用1: hfl/chinese-bert-wwm-tiny
+备用2: uer/chinese_roberta_tiny
 ```
 ### 安装环境
 ```
