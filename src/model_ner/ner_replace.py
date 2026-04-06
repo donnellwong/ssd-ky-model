@@ -1,15 +1,14 @@
 import re
-from ky_model.ner_tokens import MAX_LEN, ERR_TOKEN
+from model_ner import ner_tokens
 from sys_zabbix.db import zz_ner_log
 
 class NumberReplace:
-    def __init__(self, ky_lottery_names, mark):
+    def __init__(self, mark, othen_replacers=[]):
         self.mark = mark # 数字替换的标识
-        self.ky_lottery_names = ky_lottery_names
         self.ky_text = ''
 
         self.numbers = []  # 存储原始数字序列
-        self.othen_replacers = []
+        self.othen_replacers = othen_replacers # 调整坐标
         self.n = 0
 
     def update_othen_replacers(self, start, l):
@@ -37,14 +36,6 @@ class NumberReplace:
     def replace_numbers(self, match:re.Match):
         '''替换字符串中的数字为 '长度n' 形式'''
         number_sequence = match.group()
-        # 忽略彩种
-        for txt in self.ky_lottery_names:
-            for m in re.finditer(txt, self.ky_text):
-                s1,e1 = match.span()
-                s2,e2 = m.span()
-                if s1 >= s2 and e1 <= e2:
-                    return number_sequence
-        
         len_num = len(number_sequence)
         len_x = len(re.findall(r'[xX]{1}', number_sequence))
         if len_x > 0:
@@ -56,15 +47,15 @@ class NumberReplace:
                 if len(arr) == 2:
                     l1 = len(arr[0])
                     l2 = len(arr[1])
-                    if l1 > MAX_LEN:
-                        l1 = MAX_LEN
-                    if l2 > MAX_LEN:
-                        l2 = MAX_LEN
+                    if l1 > ner_tokens.MAX_LEN:
+                        l1 = ner_tokens.MAX_LEN
+                    if l2 > ner_tokens.MAX_LEN:
+                        l2 = ner_tokens.MAX_LEN
                     return self.placeholder(f"[{l1}{self.mark}x{l2}{self.mark}]", number_sequence, *match.span())
                 else:
-                    return self.placeholder(ERR_TOKEN, number_sequence, *match.span())
+                    return self.placeholder(ner_tokens.ERR_TOKEN, number_sequence, *match.span())
             else:
-                return self.placeholder(ERR_TOKEN, number_sequence, *match.span())
+                return self.placeholder(ner_tokens.ERR_TOKEN, number_sequence, *match.span())
         elif len(set(number_sequence)) == 1 and len_num > 1:
             if self.mark == 'n':
                 mark = 'b' # 豹子，如：111
@@ -74,29 +65,43 @@ class NumberReplace:
             mark = self.mark
 
         l = len(number_sequence)
-        if l > MAX_LEN:
-            l = MAX_LEN
+        if l > ner_tokens.MAX_LEN:
+            l = ner_tokens.MAX_LEN
         return self.placeholder(f'[{mark}]' if l == 1 else f'[{l}{mark}]', number_sequence, *match.span())
     
+    def replace_lottery(self, match:re.Match):
+        number_sequence = match.group()
+        return self.placeholder(self.mark, number_sequence, *match.span())
+
 class TextSub:
-    def __init__(self, text:str, ky_lottery_names):
-        self.ky_lottery_names = ky_lottery_names
-        self.replacer_n = NumberReplace(self.ky_lottery_names, 'n') # 小写字母
-        self.replacer_m = NumberReplace(self.ky_lottery_names, 'm') # 大写字母
+    def __init__(self, ky_LOTTERY_PATTERN=[]):
+        self.ky_LOTTERY_PATTERN = list(set(ky_LOTTERY_PATTERN + list(ner_tokens.LOTTERY_PATTERN.keys())))
+        self.replacer_l = NumberReplace(ner_tokens.LOTTERY_TOKEN) # 彩种
+        # 小写字母
+        self.replacer_n = NumberReplace('n', othen_replacers=[
+            self.replacer_l
+        ])
+        # 大写字母
+        self.replacer_m = NumberReplace('m', othen_replacers=[
+            self.replacer_l,
+            self.replacer_n
+        ])
         
     def replace(self, text):
+        self.replacer_l.ky_text = text
+        text = re.sub(r'(?:' + r'|'.join(self.ky_LOTTERY_PATTERN) + r')', self.replacer_l.replace_lottery, text)
+
         self.replacer_n.ky_text = text
         text = re.sub(r'[\dxX]{2,}', self.replacer_n.replace_numbers, text)
 
         self.replacer_m.ky_text = text
-        self.replacer_m.othen_replacers = [self.replacer_n]
-        text = re.sub(r'[零一二三四五六七八九十百千万]{2,}', self.replacer_m.replace_numbers, text)
+        text = re.sub(r'['+ner_tokens.CN_NUMBER+r']{2,}', self.replacer_m.replace_numbers, text)
 
         return text
         
     def restore_original(self, text, tokens, offsets):
         '''复原为原始字符串'''
-        numbers = self.replacer_n.numbers + self.replacer_m.numbers
+        numbers = self.replacer_l.numbers + self.replacer_n.numbers + self.replacer_m.numbers
         numbers.sort(key=lambda x:x[0])
         numbers = {tuple(span): (placeholder, number_sequence) for span, placeholder, number_sequence in numbers}
 
@@ -112,7 +117,7 @@ class TextSub:
         with zz_ner_log.NerLogCollection() as noZ:
             data = noZ.get_labels(_tokens)
         if data is None:
-            _labels = ['0'] * len(_tokens)
+            _labels = ['O'] * len(_tokens)
             _bet_labels = ['B-BET'] + ['I-BET'] * (len(_tokens)-1)
         else:
             _labels = data['labels']
@@ -125,6 +130,11 @@ class TextSub:
                 original_span = numbers[span][1]
             else:
                 original_span = text[start:end]
+            
+            # 替换彩种
+            if token == ner_tokens.LOTTERY_TOKEN and original_span in ner_tokens.LOTTERY_NAMES:
+                original_span = ner_tokens.LOTTERY_NAMES[original_span]
+            
             res.append({
                 'text': original_span,
                 'token': token,
