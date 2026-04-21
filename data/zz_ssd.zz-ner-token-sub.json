@@ -1,0 +1,2086 @@
+[{
+  "_id": {
+    "$oid": "69e2e46c2d276fff2b70909a"
+  },
+  "text": "共 520 元",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-SUM-AMOUNT",
+    "I-SUM-AMOUNT",
+    "I-SUM-AMOUNT"
+  ],
+  "texts": [
+    "共",
+    "520",
+    "元"
+  ],
+  "time": 1776590105,
+  "token": "共~\\[[234][anm]\\]~[毛元倍]",
+  "tokens": [
+    "共",
+    "\\[[234][anm]\\]",
+    "[毛元倍]"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2e4902d276fff2b70909b"
+  },
+  "text": "福",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-LOTTERY"
+  ],
+  "texts": [
+    "福"
+  ],
+  "time": 1776588871,
+  "token": "[L]",
+  "tokens": [
+    "[L]"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e4a02d276fff2b70909c"
+  },
+  "text": "胆",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ZX1"
+  ],
+  "texts": [
+    "独"
+  ],
+  "time": 1776477344,
+  "token": "独",
+  "tokens": [
+    "独"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e51f2d276fff2b70909f"
+  },
+  "text": "百",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO"
+  ],
+  "texts": [
+    "百"
+  ],
+  "time": 1776477471,
+  "token": "百",
+  "tokens": [
+    "百"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e51f2d276fff2b7090a0"
+  },
+  "text": "十",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO"
+  ],
+  "texts": [
+    "十"
+  ],
+  "time": 1776477471,
+  "token": "十",
+  "tokens": [
+    "十"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e51f2d276fff2b7090a1"
+  },
+  "text": "个",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO"
+  ],
+  "texts": [
+    "个"
+  ],
+  "time": 1776477471,
+  "token": "个",
+  "tokens": [
+    "个"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e5972d276fff2b7090a6"
+  },
+  "text": "直 组",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ZD3",
+    "B-ZX3"
+  ],
+  "texts": [
+    "直",
+    "组"
+  ],
+  "time": 1776588904,
+  "token": "直|组",
+  "tokens": [
+    "直",
+    "组"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e60d2d276fff2b7090a9"
+  },
+  "text": "不 定",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-NOTE",
+    "I-NOTE"
+  ],
+  "texts": [
+    "不",
+    "定"
+  ],
+  "time": 1776588900,
+  "token": "不|定",
+  "tokens": [
+    "不",
+    "定"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e6182d276fff2b7090aa"
+  },
+  "text": "飞",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ZX2"
+  ],
+  "texts": [
+    "飞"
+  ],
+  "time": 1776477720,
+  "token": "飞",
+  "tokens": [
+    "飞"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e64a2d276fff2b7090ac"
+  },
+  "text": "组 三",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-G3",
+    "I-G3"
+  ],
+  "texts": [
+    "组",
+    "三"
+  ],
+  "time": 1776588941,
+  "token": "组|三",
+  "tokens": [
+    "组",
+    "三"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e6532d276fff2b7090ad"
+  },
+  "text": "组 六",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-G6",
+    "I-G6"
+  ],
+  "texts": [
+    "组",
+    "六"
+  ],
+  "time": 1776588936,
+  "token": "组|六",
+  "tokens": [
+    "组",
+    "六"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e7382d276fff2b7090b5"
+  },
+  "text": "组",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ZX3"
+  ],
+  "texts": [
+    "组"
+  ],
+  "time": 1776478008,
+  "token": "组",
+  "tokens": [
+    "组"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e7412d276fff2b7090b6"
+  },
+  "text": "直",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ZD3"
+  ],
+  "texts": [
+    "直"
+  ],
+  "time": 1776588893,
+  "token": "直",
+  "tokens": [
+    "直"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2e8e52d276fff2b7090b9"
+  },
+  "text": "0124679",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-CODE"
+  ],
+  "texts": [
+    "0124679"
+  ],
+  "time": 1776680709,
+  "token": "\\d{4,}",
+  "tokens": [
+    "\\d{4,}"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2ec2a2d276fff2b7090bd"
+  },
+  "text": "55 [忽略多号码] 92",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-CODE",
+    "I-CODE",
+    "I-CODE"
+  ],
+  "texts": [
+    "55",
+    "[忽略多号码]",
+    "92"
+  ],
+  "time": 1776680265,
+  "token": "\\d{2}~\\[忽略多号码\\]~\\d{2}",
+  "tokens": [
+    "\\d{2}",
+    "\\[忽略多号码\\]",
+    "\\d{2}"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2ed422d276fff2b7090c8"
+  },
+  "text": "百 579 十 024 个 024",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO",
+    "B-CODE-PO-BAI",
+    "B-PO",
+    "B-CODE-PO-SHI",
+    "B-PO",
+    "B-CODE-PO-GE"
+  ],
+  "texts": [
+    "百",
+    "579",
+    "十",
+    "024",
+    "个",
+    "024"
+  ],
+  "time": 1776680854,
+  "token": "百~\\d+~十~\\d+~个~\\d+",
+  "tokens": [
+    "百",
+    "\\d+",
+    "十",
+    "\\d+",
+    "个",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2edad2d276fff2b7090cd"
+  },
+  "text": "共 一 60 元",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "O",
+    "B-IGNORE",
+    "B-SUM-AMOUNT",
+    "I-SUM-AMOUNT"
+  ],
+  "texts": [
+    "共",
+    "一",
+    "60",
+    "元"
+  ],
+  "time": 1776679786,
+  "token": "共~一~\\d+~[毛元倍]",
+  "tokens": [
+    "共",
+    "一",
+    "\\d+",
+    "[毛元倍]"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2f10f2d276fff2b7090f2"
+  },
+  "text": "定",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-NOTE"
+  ],
+  "texts": [
+    "定"
+  ],
+  "time": 1776588869,
+  "token": "定",
+  "tokens": [
+    "定"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2f3312d276fff2b709109"
+  },
+  "text": "共 576 注",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-LENGTH",
+    "I-LENGTH",
+    "I-LENGTH"
+  ],
+  "texts": [
+    "共",
+    "576",
+    "注"
+  ],
+  "time": 1776590546,
+  "token": "共~\\[[234][an]\\]~注",
+  "tokens": [
+    "共",
+    "\\[[234][an]\\]",
+    "注"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2f3a12d276fff2b70910c"
+  },
+  "text": "二 码 定",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-NOTE",
+    "I-NOTE",
+    "I-NOTE"
+  ],
+  "texts": [
+    "二",
+    "码",
+    "定"
+  ],
+  "time": 1776653655,
+  "token": "[123一二三]~码~定",
+  "tokens": [
+    "[123一二三]",
+    "码",
+    "定"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2f6312d276fff2b70911b"
+  },
+  "text": "各 - 10 元",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "O",
+    "O",
+    "B-AMOUNT",
+    "I-AMOUNT"
+  ],
+  "texts": [
+    "各",
+    "-",
+    "10",
+    "元"
+  ],
+  "time": 1776679083,
+  "token": "[各打个]~\\-~\\d+~[毛元倍]",
+  "tokens": [
+    "[各打个]",
+    "\\-",
+    "\\d+",
+    "[毛元倍]"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2f6722d276fff2b70911e"
+  },
+  "text": "个 十 百",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO",
+    "I-PO",
+    "I-PO"
+  ],
+  "texts": [
+    "个",
+    "十",
+    "百"
+  ],
+  "time": 1776588839,
+  "token": "个|十|百",
+  "tokens": [
+    "个",
+    "十",
+    "百"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2f67c2d276fff2b70911f"
+  },
+  "text": "百 十 个",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO",
+    "I-PO",
+    "I-PO"
+  ],
+  "texts": [
+    "百",
+    "十",
+    "个"
+  ],
+  "time": 1776588795,
+  "token": "百|十|个",
+  "tokens": [
+    "百",
+    "十",
+    "个"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2f7e82d276fff2b709121"
+  },
+  "text": "豹",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-BZ"
+  ],
+  "texts": [
+    "豹"
+  ],
+  "time": 1776588836,
+  "token": "豹",
+  "tokens": [
+    "豹"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2f8542d276fff2b709123"
+  },
+  "text": "各 0 . 2 元",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-AMOUNT",
+    "I-AMOUNT",
+    "I-AMOUNT",
+    "I-AMOUNT",
+    "I-AMOUNT"
+  ],
+  "texts": [
+    "各",
+    "0",
+    ".",
+    "2",
+    "元"
+  ],
+  "time": 1776680968,
+  "token": "[各打]~0~\\.~[123456789]~元",
+  "tokens": [
+    "[各打]",
+    "0",
+    "\\.",
+    "[123456789]",
+    "元"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2f8cb2d276fff2b709127"
+  },
+  "text": "十 元",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-AMOUNT",
+    "I-AMOUNT"
+  ],
+  "texts": [
+    "十",
+    "元"
+  ],
+  "time": 1776590301,
+  "token": "[\\d一二三四五六七八九十]~[元倍]",
+  "tokens": [
+    "[\\d一二三四五六七八九十]",
+    "[元倍]"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2f90f2d276fff2b70912a"
+  },
+  "text": "跨",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-K"
+  ],
+  "texts": [
+    "跨"
+  ],
+  "time": 1776588828,
+  "token": "跨",
+  "tokens": [
+    "跨"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2fa2c2d276fff2b709132"
+  },
+  "text": "十 579 十 13 十 13",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL"
+  ],
+  "texts": [
+    "十",
+    "579",
+    "十",
+    "13",
+    "十",
+    "13"
+  ],
+  "time": 1776680090,
+  "token": "十~\\d+~十~\\d+~十~\\d+",
+  "tokens": [
+    "十",
+    "\\d+",
+    "十",
+    "\\d+",
+    "十",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2fae52d276fff2b70913a"
+  },
+  "text": "各 100 元",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-AMOUNT",
+    "I-AMOUNT",
+    "I-AMOUNT"
+  ],
+  "texts": [
+    "各",
+    "100",
+    "元"
+  ],
+  "time": 1776680696,
+  "token": "[各打个]~\\d+~[毛元倍]",
+  "tokens": [
+    "[各打个]",
+    "\\d+",
+    "[毛元倍]"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2fb542d276fff2b70913c"
+  },
+  "text": "二 定",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-NOTE",
+    "I-NOTE"
+  ],
+  "texts": [
+    "二",
+    "定"
+  ],
+  "time": 1776588818,
+  "token": "二|定",
+  "tokens": [
+    "二",
+    "定"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e2fe522d276fff2b709144"
+  },
+  "text": "百 68 百 68 百 579",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL"
+  ],
+  "texts": [
+    "百",
+    "68",
+    "百",
+    "68",
+    "百",
+    "579"
+  ],
+  "time": 1776679989,
+  "token": "百~\\d+~百~\\d+~百~\\d+",
+  "tokens": [
+    "百",
+    "\\d+",
+    "百",
+    "\\d+",
+    "百",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2fe522d276fff2b709145"
+  },
+  "text": "个 579 个 024 个 68",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL"
+  ],
+  "texts": [
+    "个",
+    "579",
+    "个",
+    "024",
+    "个",
+    "68"
+  ],
+  "time": 1776680146,
+  "token": "个~\\d+~个~\\d+~个~\\d+",
+  "tokens": [
+    "个",
+    "\\d+",
+    "个",
+    "\\d+",
+    "个",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e2ff792d276fff2b709155"
+  },
+  "text": "打 底",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-NOTE",
+    "I-NOTE"
+  ],
+  "texts": [
+    "打",
+    "底"
+  ],
+  "time": 1776588815,
+  "token": "打|底",
+  "tokens": [
+    "打",
+    "底"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e300132d276fff2b709157"
+  },
+  "text": "直选",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ZD3"
+  ],
+  "texts": [
+    "直选"
+  ],
+  "time": 1776588808,
+  "token": "直选",
+  "tokens": [
+    "直选"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e300132d276fff2b709158"
+  },
+  "text": "组选",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ZX3"
+  ],
+  "texts": [
+    "组选"
+  ],
+  "time": 1776588811,
+  "token": "组选",
+  "tokens": [
+    "组选"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e339a42d276fff2b709174"
+  },
+  "text": "百 0235689",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO",
+    "B-CODE-PO-BAI"
+  ],
+  "texts": [
+    "百",
+    "0235689"
+  ],
+  "time": 1776679966,
+  "token": "百~\\d+",
+  "tokens": [
+    "百",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e33dc52d276fff2b70917b"
+  },
+  "text": "百 - 02789",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO",
+    "O",
+    "B-CODE-PO-BAI"
+  ],
+  "texts": [
+    "百",
+    "-",
+    "02789"
+  ],
+  "time": 1776679951,
+  "token": "百~-~\\d+",
+  "tokens": [
+    "百",
+    "-",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e33ddd2d276fff2b70917d"
+  },
+  "text": "十 - 07",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO",
+    "O",
+    "B-CODE-PO-SHI"
+  ],
+  "texts": [
+    "十",
+    "-",
+    "07"
+  ],
+  "time": 1776681228,
+  "token": "十~-~\\d+",
+  "tokens": [
+    "十",
+    "-",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e33e232d276fff2b70917e"
+  },
+  "text": "个 - 012346",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO",
+    "O",
+    "B-CODE-PO-GE"
+  ],
+  "texts": [
+    "个",
+    "-",
+    "012346"
+  ],
+  "time": 1776680133,
+  "token": "个~-~\\d+",
+  "tokens": [
+    "个",
+    "-",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e340fd2d276fff2b709193"
+  },
+  "text": "六 码",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-NOTE",
+    "I-NOTE"
+  ],
+  "texts": [
+    "六",
+    "码"
+  ],
+  "time": 1776653632,
+  "token": "[\\d一二三四五六七八九]~码",
+  "tokens": [
+    "[\\d一二三四五六七八九]",
+    "码"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e3998c2d276fff2b709195"
+  },
+  "text": "16 元 2 毛",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-AMOUNT",
+    "I-AMOUNT",
+    "I-AMOUNT",
+    "I-AMOUNT"
+  ],
+  "texts": [
+    "16",
+    "元",
+    "2",
+    "毛"
+  ],
+  "time": 1776679878,
+  "token": "\\d+~元~\\d+~毛",
+  "tokens": [
+    "\\d+",
+    "元",
+    "\\d+",
+    "毛"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e3a21a2d276fff2b709198"
+  },
+  "text": "百 2389 百 2389",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL"
+  ],
+  "texts": [
+    "百",
+    "2389",
+    "百",
+    "2389"
+  ],
+  "time": 1776679928,
+  "token": "百~\\d+~百~\\d+",
+  "tokens": [
+    "百",
+    "\\d+",
+    "百",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e3a21a2d276fff2b709199"
+  },
+  "text": "十 2457 十 0257",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL"
+  ],
+  "texts": [
+    "十",
+    "2457",
+    "十",
+    "0257"
+  ],
+  "time": 1776680052,
+  "token": "十~\\d+~十~\\d+",
+  "tokens": [
+    "十",
+    "\\d+",
+    "十",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e3a21a2d276fff2b70919a"
+  },
+  "text": "个 1679 个 01679",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL"
+  ],
+  "texts": [
+    "个",
+    "1679",
+    "个",
+    "01679"
+  ],
+  "time": 1776680123,
+  "token": "个~\\d+~个~\\d+",
+  "tokens": [
+    "个",
+    "\\d+",
+    "个",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e3a21a2d276fff2b70919b"
+  },
+  "text": "32 元 5 毛 16 元 2 毛",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "B-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "I-ROW-TO-COL",
+    "I-ROW-TO-COL"
+  ],
+  "texts": [
+    "32",
+    "元",
+    "5",
+    "毛",
+    "16",
+    "元",
+    "2",
+    "毛"
+  ],
+  "time": 1776679909,
+  "token": "\\d+~元~\\d+~毛~\\d+~元~\\d+~毛",
+  "tokens": [
+    "\\d+",
+    "元",
+    "\\d+",
+    "毛",
+    "\\d+",
+    "元",
+    "\\d+",
+    "毛"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e449c52d276fff2b7091a0"
+  },
+  "text": "64 注",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-LENGTH",
+    "I-LENGTH"
+  ],
+  "texts": [
+    "64",
+    "注"
+  ],
+  "time": 1776679360,
+  "token": "\\d+~注",
+  "tokens": [
+    "\\d+",
+    "注"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e44ac62d276fff2b7091b0"
+  },
+  "text": "复",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-FS"
+  ],
+  "texts": [
+    "复"
+  ],
+  "time": 1776588773,
+  "token": "复",
+  "tokens": [
+    "复"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e44bff2d276fff2b7091b9"
+  },
+  "text": "各 一 元",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-AMOUNT",
+    "I-AMOUNT",
+    "I-AMOUNT"
+  ],
+  "texts": [
+    "各",
+    "一",
+    "元"
+  ],
+  "time": 1776681552,
+  "token": "[各打]~[\\d一二三四五六七八九十]~[毛元倍]",
+  "tokens": [
+    "[各打]",
+    "[\\d一二三四五六七八九十]",
+    "[毛元倍]"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e44c7e2d276fff2b7091bc"
+  },
+  "text": "共 十 元",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-SUM-AMOUNT",
+    "I-SUM-AMOUNT",
+    "I-SUM-AMOUNT"
+  ],
+  "texts": [
+    "共",
+    "十",
+    "元"
+  ],
+  "time": 1776589582,
+  "token": "共~[\\d一二三四五六七八九十]~[毛元倍]",
+  "tokens": [
+    "共",
+    "[\\d一二三四五六七八九十]",
+    "[毛元倍]"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e44d252d276fff2b7091c2"
+  },
+  "text": "个 0",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO",
+    "B-CODE-PO-GE"
+  ],
+  "texts": [
+    "个",
+    "0"
+  ],
+  "time": 1776681297,
+  "token": "个~\\d+",
+  "tokens": [
+    "个",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e44ebf2d276fff2b7091cd"
+  },
+  "text": "367 - 457 - 467",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-CODE",
+    "I-CODE",
+    "I-CODE",
+    "I-CODE",
+    "I-CODE"
+  ],
+  "texts": [
+    "367",
+    "-",
+    "457",
+    "-",
+    "467"
+  ],
+  "time": 1776681060,
+  "token": "\\d{3}~\\-~\\d{3}~\\-~\\d{3}",
+  "tokens": [
+    "\\d{3}",
+    "\\-",
+    "\\d{3}",
+    "\\-",
+    "\\d{3}"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e44f462d276fff2b7091d3"
+  },
+  "text": "单",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-ZD3"
+  ],
+  "texts": [
+    "单"
+  ],
+  "time": 1776588766,
+  "token": "单",
+  "tokens": [
+    "单"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e44ff22d276fff2b7091dc"
+  },
+  "text": "倒",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-FS"
+  ],
+  "texts": [
+    "倒"
+  ],
+  "time": 1776588752,
+  "token": "倒",
+  "tokens": [
+    "倒"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e491e22d276fff2b7091e9"
+  },
+  "text": "十 67",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-PO",
+    "B-CODE-PO-SHI"
+  ],
+  "texts": [
+    "十",
+    "67"
+  ],
+  "time": 1776681202,
+  "token": "十~\\d+",
+  "tokens": [
+    "十",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e493a52d276fff2b7091ea"
+  },
+  "text": "000 [忽略多号码] 999",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-CODE",
+    "I-CODE",
+    "I-CODE"
+  ],
+  "texts": [
+    "000",
+    "[忽略多号码]",
+    "999"
+  ],
+  "time": 1776680621,
+  "token": "\\d{3,}~\\[忽略多号码\\]~\\d{3,}",
+  "tokens": [
+    "\\d{3,}",
+    "\\[忽略多号码\\]",
+    "\\d{3,}"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e494832d276fff2b7091eb"
+  },
+  "text": "474 747 746",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-CODE",
+    "I-CODE",
+    "I-CODE"
+  ],
+  "texts": [
+    "474",
+    "747",
+    "746"
+  ],
+  "time": 1776680801,
+  "token": "\\d{3,}~\\d{3,}~\\d{3,}",
+  "tokens": [
+    "\\d{3,}",
+    "\\d{3,}",
+    "\\d{3,}"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e4b4242d276fff2b7091ec"
+  },
+  "text": "挑",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-NOTE"
+  ],
+  "texts": [
+    "挑"
+  ],
+  "time": 1776596004,
+  "token": "挑",
+  "tokens": [
+    "挑"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e4b5c52d276fff2b7091ed"
+  },
+  "text": "923 925",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-AMOUNT",
+    "I-AMOUNT"
+  ],
+  "texts": [
+    "923",
+    "925"
+  ],
+  "time": 1776681000,
+  "token": "\\d{3,}~\\d{3,}",
+  "tokens": [
+    "\\d{3,}",
+    "\\d{3,}"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e4b9c02d276fff2b7091ee"
+  },
+  "text": "100 元",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-AMOUNT",
+    "I-AMOUNT"
+  ],
+  "texts": [
+    "100",
+    "元"
+  ],
+  "time": 1776679682,
+  "token": "\\d+~[毛元倍]",
+  "tokens": [
+    "\\d+",
+    "[毛元倍]"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e58af82d276fff2b7091f5"
+  },
+  "text": "257 . 275 . 643",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-CODE",
+    "I-CODE",
+    "I-CODE",
+    "I-CODE",
+    "I-CODE"
+  ],
+  "texts": [
+    "257",
+    ".",
+    "275",
+    ".",
+    "643"
+  ],
+  "time": 1776680931,
+  "token": "\\d{3,}~\\.~\\d{3,}~\\.~\\d{3,}",
+  "tokens": [
+    "\\d{3,}",
+    "\\.",
+    "\\d{3,}",
+    "\\.",
+    "\\d{3,}"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e58f162d276fff2b7091fd"
+  },
+  "text": "156 . 5 元",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-AMOUNT",
+    "I-AMOUNT",
+    "I-AMOUNT",
+    "I-AMOUNT"
+  ],
+  "texts": [
+    "156",
+    ".",
+    "5",
+    "元"
+  ],
+  "time": 1776681577,
+  "token": "\\d{,3}~\\.~\\d~元",
+  "tokens": [
+    "\\d{,3}",
+    "\\.",
+    "\\d",
+    "元"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e58f3f2d276fff2b7091ff"
+  },
+  "text": "和值",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-HZ"
+  ],
+  "texts": [
+    "和值"
+  ],
+  "time": 1776652095,
+  "token": "和值",
+  "tokens": [
+    "和值"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e58fe02d276fff2b709204"
+  },
+  "text": "福 体",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-LOTTERY",
+    "I-LOTTERY"
+  ],
+  "texts": [
+    "福",
+    "体"
+  ],
+  "time": 1776652256,
+  "token": "[L]|[L]",
+  "tokens": [
+    "[L]",
+    "[L]"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e590372d276fff2b709205"
+  },
+  "text": "共 240",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-SUM-AMOUNT",
+    "I-SUM-AMOUNT"
+  ],
+  "texts": [
+    "共",
+    "240"
+  ],
+  "time": 1776679398,
+  "token": "共~\\d+",
+  "tokens": [
+    "共",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e590cf2d276fff2b709209"
+  },
+  "text": "035 . 958",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-CODE",
+    "I-CODE",
+    "I-CODE"
+  ],
+  "texts": [
+    "035",
+    ".",
+    "958"
+  ],
+  "time": 1776680901,
+  "token": "\\d{3}~\\.~\\d{3}",
+  "tokens": [
+    "\\d{3}",
+    "\\.",
+    "\\d{3}"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e5915f2d276fff2b70920d"
+  },
+  "text": "二 单",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-AMOUNT",
+    "B-ZD3"
+  ],
+  "texts": [
+    "二",
+    "单"
+  ],
+  "time": 1776652639,
+  "token": "[\\d一二三四五六七八九十]~[直单]",
+  "tokens": [
+    "[\\d一二三四五六七八九十]",
+    "[直单]"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e591802d276fff2b70920e"
+  },
+  "text": "一 组",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-AMOUNT",
+    "B-ZX3"
+  ],
+  "texts": [
+    "一",
+    "组"
+  ],
+  "time": 1776652672,
+  "token": "[\\d一二三四五六七八九十]~组",
+  "tokens": [
+    "[\\d一二三四五六七八九十]",
+    "组"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e595892d276fff2b70921b"
+  },
+  "text": "各 50",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-AMOUNT",
+    "I-AMOUNT"
+  ],
+  "texts": [
+    "各",
+    "50"
+  ],
+  "time": 1776680688,
+  "token": "[各打]~\\d+",
+  "tokens": [
+    "[各打]",
+    "\\d+"
+  ],
+  "token_type": "3"
+},
+{
+  "_id": {
+    "$oid": "69e598ed2d276fff2b709224"
+  },
+  "text": "沾边赖",
+  "bet_labels": [
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-NOTE"
+  ],
+  "texts": [
+    "沾边赖"
+  ],
+  "time": 1776654573,
+  "token": "沾边赖",
+  "tokens": [
+    "沾边赖"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e599b82d276fff2b709226"
+  },
+  "text": "组 六 组 三",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-G6",
+    "I-G6",
+    "B-G3",
+    "I-G3"
+  ],
+  "texts": [
+    "组",
+    "六",
+    "组",
+    "三"
+  ],
+  "time": 1776654776,
+  "token": "组|六|组|三",
+  "tokens": [
+    "组",
+    "六",
+    "组",
+    "三"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e599bf2d276fff2b709227"
+  },
+  "text": "组 三 组 六",
+  "bet_labels": [
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-G6",
+    "I-G6",
+    "B-ZX3",
+    "I-G6"
+  ],
+  "texts": [
+    "组",
+    "三",
+    "组",
+    "六"
+  ],
+  "time": 1776654783,
+  "token": "组|三|组|六",
+  "tokens": [
+    "组",
+    "三",
+    "组",
+    "六"
+  ],
+  "token_type": "2"
+},
+{
+  "_id": {
+    "$oid": "69e5c0292d276fff2b709237"
+  },
+  "text": "13 10",
+  "bet_labels": [
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-CODE",
+    "I-CODE"
+  ],
+  "texts": [
+    "13",
+    "10"
+  ],
+  "time": 1776680953,
+  "token": "\\d{2}~\\d{2}",
+  "token_type": "3",
+  "tokens": [
+    "\\d{2}",
+    "\\d{2}"
+  ]
+},
+{
+  "_id": {
+    "$oid": "69e5c8b82d276fff2b70923a"
+  },
+  "text": "10 各 飞 20",
+  "bet_labels": [
+    "B-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET",
+    "I-BET"
+  ],
+  "err_text": "",
+  "labels": [
+    "B-CODE",
+    "O",
+    "B-ZX2",
+    "B-AMOUNT",
+    "O"
+  ],
+  "texts": [
+    "10",
+    "各",
+    "飞",
+    "20",
+    "[E]"
+  ],
+  "time": 1776733761,
+  "token": "((?:\\d{2}~){1,3})(各~)(飞~)(\\d+~)(\\[E\\])",
+  "token_type": "4",
+  "tokens": [
+    "(?:\\d{2}~){1,3}",
+    "各",
+    "飞",
+    "\\d+",
+    "\\[E\\]"
+  ]
+}]
