@@ -1,14 +1,5 @@
 import torch
-import transformers
 print(torch.__version__)
+
+import transformers
 print(transformers.__version__)
-
-
-# from transformers import AutoTokenizer
-# model_checkpoint = "hfl/chinese-bert-wwm-ext"
-# tokenizer = AutoTokenizer.from_pretrained(model_checkpoint, use_fast=True)
-# tokenizer.save_pretrained("./onnx_ner_model")
-
-# from transformers import AutoConfig
-# config = AutoConfig.from_pretrained(model_checkpoint, use_fast=True)
-# config.save_pretrained("./onnx_ner_model")
