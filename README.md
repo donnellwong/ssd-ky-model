@@ -7,6 +7,8 @@
 ```
 ### 安装环境
 ```
+# 先安装 ssd-server 项目
+
 # 可以修改cuda版本，执行nvidia-smi查看
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
 pip install transformers==4.57.* datasets==4.8.* accelerate==1.13.* seqeval==1.2.* "optimum[onnxruntime]==2.1.*"

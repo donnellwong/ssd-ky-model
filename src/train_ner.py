@@ -14,7 +14,8 @@ from typing import Optional, Tuple
 from seqeval.metrics import precision_score, recall_score, f1_score, accuracy_score
 from datasets import load_dataset
 from dataclasses import dataclass
-import conf
+from ky_model import ner_tokens
+import ner_conf
 
 # ====================== 自定义联合模型 ======================
 @dataclass
@@ -32,8 +33,8 @@ class JointNERModel(BertPreTrainedModel):
     def __init__(self, config):
         super().__init__(config)
         # 标签数量
-        self.num_entity_labels = len(conf.entity_labels)
-        self.num_bet_labels = len(conf.bet_labels)
+        self.num_entity_labels = len(ner_conf.entity_labels)
+        self.num_bet_labels = len(ner_conf.bet_labels)
         
         # 共享的BERT编码器
         self.bert = BertModel(config)
@@ -91,7 +92,8 @@ class JointNERModel(BertPreTrainedModel):
 # ====================== 数据加载 ======================
 dataset = load_dataset("json", data_files={"train": "train.jsonl", "validation": "valid.jsonl"})
 
-tokenizer = AutoTokenizer.from_pretrained(conf.model_checkpoint, use_fast=True)
+tokenizer = AutoTokenizer.from_pretrained(ner_conf.model_checkpoint, use_fast=True)
+tokenizer.add_special_tokens(ner_tokens.special_tokens)
 
 def tokenize_and_align_labels(examples):
     tokenized_inputs = tokenizer(
@@ -131,13 +133,13 @@ def tokenize_and_align_labels(examples):
                 label_ids.append(-100)
             elif word_idx != previous_word_idx:
                 # 新词的第一个子词
-                label_ids.append(conf.entity2id.get(labels[word_idx], -100))
+                label_ids.append(ner_conf.entity2id.get(labels[word_idx], -100))
             else:
                 # 同一个词的后续子词 → 如果是 B- 则改为 I-
                 lbl = labels[word_idx]
                 if lbl.startswith("B-"):
                     lbl = "I-" + lbl[2:]
-                label_ids.append(conf.entity2id.get(lbl, -100))
+                label_ids.append(ner_conf.entity2id.get(lbl, -100))
             previous_word_idx = word_idx
         entity_label_ids.append(label_ids)
 
@@ -151,12 +153,12 @@ def tokenize_and_align_labels(examples):
             if word_idx is None:
                 label_ids.append(-100)
             elif word_idx != previous_word_idx:
-                label_ids.append(conf.bet2id.get(labels[word_idx], -100))
+                label_ids.append(ner_conf.bet2id.get(labels[word_idx], -100))
             else:
                 lbl = labels[word_idx]
                 if lbl.startswith("B-"):
                     lbl = "I-" + lbl[2:]
-                label_ids.append(conf.bet2id.get(lbl, -100))
+                label_ids.append(ner_conf.bet2id.get(lbl, -100))
             previous_word_idx = word_idx
         bet_label_ids.append(label_ids)
 
@@ -172,7 +174,7 @@ tokenized_datasets = dataset.map(
 
 # ====================== 模型 & Trainer ======================
 model = JointNERModel.from_pretrained(
-    conf.model_checkpoint,
+    ner_conf.model_checkpoint,
     ignore_mismatched_sizes=True
 )
 
@@ -249,8 +251,8 @@ def compute_metrics(p):
     true_entity = []
     pred_entity = []
     for label_seq, pred_seq in zip(entity_labels, entity_preds):
-        true_seq = [conf.id2entity[l] for l in label_seq if l != -100]
-        pred_seq = [conf.id2entity[p] for p, l in zip(pred_seq, label_seq) if l != -100]
+        true_seq = [ner_conf.id2entity[l] for l in label_seq if l != -100]
+        pred_seq = [ner_conf.id2entity[p] for p, l in zip(pred_seq, label_seq) if l != -100]
         true_entity.append(true_seq)
         pred_entity.append(pred_seq)
 
@@ -269,8 +271,8 @@ def compute_metrics(p):
         true_bet = []
         pred_bet = []
         for label_seq, pred_seq in zip(bet_labels, bet_preds):
-            true_seq = [conf.id2bet[l] for l in label_seq if l != -100]
-            pred_seq = [conf.id2bet[p] for p, l in zip(pred_seq, label_seq) if l != -100]
+            true_seq = [ner_conf.id2bet[l] for l in label_seq if l != -100]
+            pred_seq = [ner_conf.id2bet[p] for p, l in zip(pred_seq, label_seq) if l != -100]
             true_bet.append(true_seq)
             pred_bet.append(pred_seq)
         

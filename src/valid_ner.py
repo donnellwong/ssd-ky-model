@@ -1,6 +1,6 @@
 import numpy as np
-import conf
-conf.model_checkpoint = "./best_ner_model"
+import ner_conf
+ner_conf.model_checkpoint = "./best_ner_model"
 import train_ner
 
 # ====================== 快速評估 ======================
@@ -49,15 +49,15 @@ for i in range(len(sample_texts)):
     true_entity_label_ids = train_ner.tokenized_datasets["validation"][i]["entity_labels"]
     pred_entity_label_ids = entity_pred_ids[i]
     
-    true_entity_labels = [conf.id2entity[l] for l in true_entity_label_ids if l != -100]
-    pred_entity_labels = [conf.id2entity[p] for p, l in zip(pred_entity_label_ids, true_entity_label_ids) if l != -100]
+    true_entity_labels = [ner_conf.id2entity[l] for l in true_entity_label_ids if l != -100]
+    pred_entity_labels = [ner_conf.id2entity[p] for p, l in zip(pred_entity_label_ids, true_entity_label_ids) if l != -100]
 
     # bet 部分
     true_bet_label_ids = train_ner.tokenized_datasets["validation"][i]["bet_labels"]
     pred_bet_label_ids = bet_pred_ids[i]                    # 注意：这里应该用 bet 的预测！（当前代码有bug）
     
-    true_bet_labels = [conf.id2bet[l] for l in true_bet_label_ids if l != -100]
-    pred_bet_labels = [conf.id2bet[p] for p, l in zip(pred_bet_label_ids, true_bet_label_ids) if l != -100]
+    true_bet_labels = [ner_conf.id2bet[l] for l in true_bet_label_ids if l != -100]
+    pred_bet_labels = [ner_conf.id2bet[p] for p, l in zip(pred_bet_label_ids, true_bet_label_ids) if l != -100]
 
     print(f"\n样本 {i+1}:")
     print("輸入文本 :", sample_texts[i])
