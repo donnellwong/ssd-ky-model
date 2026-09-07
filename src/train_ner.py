@@ -93,6 +93,7 @@ class JointNERModel(BertPreTrainedModel):
 dataset = load_dataset("json", data_files={"train": "train.jsonl", "validation": "valid.jsonl"})
 
 tokenizer = AutoTokenizer.from_pretrained(ner_conf.model_checkpoint, use_fast=True)
+# 添加新的特殊 token
 tokenizer.add_special_tokens(ner_tokens.special_tokens)
 
 def tokenize_and_align_labels(examples):
@@ -108,18 +109,27 @@ def tokenize_and_align_labels(examples):
     # ==================== 调试打印 ====================
     print("=== tokenize_and_align_labels DEBUG ===")
     for i in range(len(examples["text"])):
+        if i != 0:
+            continue
         text = examples["text"][i]
+
+
         word_ids = tokenized_inputs.word_ids(batch_index=i)
         ent_len = len(examples["entity_labels"][i]) if examples.get("entity_labels") else 0
         bet_len = len(examples["bet_labels"][i]) if examples.get("bet_labels") else 0
         max_word_idx = max((w for w in word_ids if w is not None), default=-1)
         
-        print(f"Text: {text}")
+        print(f"Text_{i}: {text}")
         print(f"  word_ids: {word_ids}")
         print(f"  max_word_idx: {max_word_idx} | entity_labels len: {ent_len} | bet_labels len: {bet_len}")
         print(f"  entity_labels: {examples['entity_labels'][i]}")
         print(f"  bet_labels: {examples['bet_labels'][i]}")
         print("-" * 60)
+        if max_word_idx + 1 != ent_len or ent_len != bet_len:
+            encoded = tokenizer(text, return_offsets_mapping=True)
+            tokens = tokenizer.convert_ids_to_tokens(encoded['input_ids'])
+            print(f"Tokens: {tokens}")
+            raise ValueError('数据分词不正确')
     # ================================================
 
     # 对齐 entity_labels
@@ -136,10 +146,11 @@ def tokenize_and_align_labels(examples):
                 label_ids.append(ner_conf.entity2id.get(labels[word_idx], -100))
             else:
                 # 同一个词的后续子词 → 如果是 B- 则改为 I-
-                lbl = labels[word_idx]
-                if lbl.startswith("B-"):
-                    lbl = "I-" + lbl[2:]
-                label_ids.append(ner_conf.entity2id.get(lbl, -100))
+                # lbl = labels[word_idx]
+                # if lbl.startswith("B-"):
+                #     lbl = "I-" + lbl[2:]
+                # label_ids.append(ner_conf.entity2id.get(lbl, -100))
+                raise ValueError('数据不正确')
             previous_word_idx = word_idx
         entity_label_ids.append(label_ids)
 
@@ -177,6 +188,8 @@ model = JointNERModel.from_pretrained(
     ner_conf.model_checkpoint,
     ignore_mismatched_sizes=True
 )
+# 添加新的特殊 token 后，resize embedding 层以匹配新的 tokenizer 大小
+model.resize_token_embeddings(len(tokenizer))
 
 training_args = TrainingArguments(
     output_dir="./results_ner",

@@ -1,8 +1,15 @@
+from ky_model import ner_tokens
+
 model_checkpoint = "hfl/chinese-bert-wwm-ext"
 # model_checkpoint = "./best_ner_model"
 
 # Entity 标签（推荐使用 BIO）
-entity_labels = ["O", "B-NUM", "I-NUM", "B-TYPE", "I-TYPE", "B-AMOUNT", "I-AMOUNT"]
+entity_labels = ["O"]
+for key in ner_tokens.NER_LABELS_NAMES.keys():
+    if key in ["O", "LOTTERY"]:
+        continue
+    entity_labels.append("B-"+key)
+    entity_labels.append("I-"+key)
 # Bet 标签（注分组）—— 必须包含 O
 bet_labels = ["O", "B-BET", "I-BET"]
 
@@ -15,5 +22,5 @@ id2bet = {i: label for label, i in bet2id.items()}
 # from huggingface_hub import list_repo_files, hf_hub_url
 # files = list_repo_files(model_checkpoint)
 # pprint(files)
-# print(hf_hub_url(model_checkpoint, 'pytorch_model.bin'))
+# print(hf_hub_url(model_checkpoint, "pytorch_model.bin"))
 # exit(0)
